@@ -2,7 +2,7 @@ package com.fundamentos;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio3b {
     /*
         Un conocido diario ofrece suscripciones anuales a los clientes.
         Con la finalidad de promover este tipo de venta, el diario ha
@@ -78,9 +78,9 @@ public class Ejercicio3 {
         double precioCadaSuscripcion, porcentajeDescuento, montoTotal;
         System.out.print("Empresa Ingrese cantidad de suscripciones:");
         numeroSuscripciones = sc.nextInt();
+        sc.nextLine();//insertar esta linea cuando se lee un número, así se evita el problema de salto de línea
         System.out.print("Empresa Ingrese tipo de Revista:");
-        tipoRevista = sc.next();//sc.nextLine() se pasa de largo por que lee el salto de linea que dejó
-        //el usuario al ingresar número en nextInt() por eso usar sc.next()
+        tipoRevista = sc.nextLine();//lee el tipo desde al inicio al salto de linea introducido por el usuario
         precioCadaSuscripcion = obtenerPrecioSuscripcion(tipoRevista);
         System.out.println("Precio de cada suscripcion:" + precioCadaSuscripcion);
         porcentajeDescuento = obtenerPorcentajeDescuento(numeroSuscripciones);
