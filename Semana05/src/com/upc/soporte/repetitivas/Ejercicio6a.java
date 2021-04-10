@@ -30,9 +30,9 @@ public class Ejercicio6a {
         scanner.nextLine();
         System.out.print("Cargo:");
         cargo = scanner.nextLine();
-        sueldoFinal = obtenerSueldoTrabajador2(2, 1000, "Gerente");//ok
+        sueldoFinal = obtenerSueldoTrabajador2(n, sueldoInicial, cargo);//ok
         System.out.println("Sueldo Final:" + sueldoFinal);//prueba unitaria ok
-        System.out.println("Porcentaje de Aumento:" + porcentajeAumento(2, 1000, "Gerente"));//ok
+        System.out.println("Porcentaje de Aumento:" + porcentajeAumento(n, sueldoInicial,cargo ));//ok
         // System.out.println("Porcentaje de aumento: " +  porcentajeAumento(1000, sueldoFinal));//opcional
     }
 
