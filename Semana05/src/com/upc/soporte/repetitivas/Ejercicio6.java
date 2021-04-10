@@ -16,13 +16,12 @@ public class Ejercicio6 {
    b.	Calcular el porcentaje de aumento después de N años.
  */
     public static void main(String[] args) {
-        System.out.println("Ingrese numero de años:");
         /// etc...
         double sueldoFinal;
-        sueldoFinal = obtenerSueldoTrabajador2(2,1000,"Gerente");
-        System.out.println("Sueldo Final:" + sueldoFinal);//prueba unitaria ok
-        System.out.println("Porcentaje de Aumento:" + porcentajeAumento(2, 100, "Gerente"));//ok
-        System.out.println("Porcentaje de aumento: " +  porcentajeAumento(100, sueldoFinal));
+        sueldoFinal = obtenerSueldoTrabajador2(2,1000,"Gerente");//ok
+        //System.out.println("Sueldo Final:" + sueldoFinal);//prueba unitaria ok
+       System.out.println("Porcentaje de Aumento:" + porcentajeAumento(2, 1000, "Gerente"));//ok
+       // System.out.println("Porcentaje de aumento: " +  porcentajeAumento(1000, sueldoFinal));
 
     }
     public static double obtenerSueldoTrabajador(int n, double sueldo, String cargo){
