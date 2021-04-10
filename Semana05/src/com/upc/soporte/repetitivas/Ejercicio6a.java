@@ -30,7 +30,7 @@ public class Ejercicio6a {
         scanner.nextLine();
         System.out.print("Cargo:");
         cargo = scanner.nextLine();
-        sueldoFinal = obtenerSueldoTrabajador2(n, sueldoInicial, cargo);//ok
+        sueldoFinal = obtenerSueldoTrabajador(n, sueldoInicial, cargo);//ok
         System.out.println("Sueldo Final:" + sueldoFinal);//prueba unitaria ok
         System.out.println("Porcentaje de Aumento:" + porcentajeAumento(n, sueldoInicial,cargo ));//ok
         // System.out.println("Porcentaje de aumento: " +  porcentajeAumento(1000, sueldoFinal));//opcional
@@ -38,12 +38,12 @@ public class Ejercicio6a {
 
     public static double porcentajeAumento(int n, double sueldo, String cargo) {
         double sueldoFinal, porcentaje;
-        sueldoFinal = obtenerSueldoTrabajador2(n, sueldo, cargo);
+        sueldoFinal = obtenerSueldoTrabajador(n, sueldo, cargo);
         porcentaje = (sueldo / sueldoFinal) * 100;
         return porcentaje;
     }
 
-    public static double obtenerSueldoTrabajador2(int n, double sueldo, String cargo) {
+    public static double obtenerSueldoTrabajador(int n, double sueldo, String cargo) {
         double incremento = 0;
         for (int i = 1; i <= n; ++i) {
             switch (cargo) {
