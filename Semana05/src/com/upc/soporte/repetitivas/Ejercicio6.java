@@ -15,22 +15,15 @@ public class Ejercicio6 {
    a.	Cálculo del sueldo después de N años
    b.	Calcular el porcentaje de aumento después de N años.
  */
-    public static void main(String[] args) {
-        /// etc...
-        double sueldoFinal;
-        sueldoFinal = obtenerSueldoTrabajador2(2,1000,"Gerente");//ok
-        //System.out.println("Sueldo Final:" + sueldoFinal);//prueba unitaria ok
-       System.out.println("Porcentaje de Aumento:" + porcentajeAumento(2, 1000, "Gerente"));//ok
-       // System.out.println("Porcentaje de aumento: " +  porcentajeAumento(1000, sueldoFinal));
+public static void main(String[] args) {
+    /// etc...
+    double sueldoFinal;
+    sueldoFinal = obtenerSueldoTrabajador2(2,1000,"Gerente");//ok
+    System.out.println("Sueldo Final:" + sueldoFinal);//prueba unitaria ok
+    System.out.println("Porcentaje de Aumento:" + porcentajeAumento(2, 1000, "Gerente"));//ok
+    // System.out.println("Porcentaje de aumento: " +  porcentajeAumento(1000, sueldoFinal));//opcional
 
-    }
-    public static double obtenerSueldoTrabajador(int n, double sueldo, String cargo){
-        return 0;
-    }
-
-    public static double porcentajeAumento(double sueldoInicial, double sueldoFinal){
-        return (sueldoInicial/sueldoFinal)*100;
-    }
+}
 
     public static double porcentajeAumento(int n, double sueldo, String cargo){
         double sueldoFinal, porcentaje;
@@ -39,22 +32,27 @@ public class Ejercicio6 {
         return porcentaje;
     }
     public static double obtenerSueldoTrabajador2(int n, double sueldo, String cargo) {
+        double incremento=0;
         for (int i = 1; i <= n; ++i) {
             if ("Gerente".equalsIgnoreCase(cargo)) {
                 if (n % 4 == 0) {
-                    sueldo = sueldo + (0.18 * sueldo);
+                    incremento =  (0.18 * sueldo);
                 } else {
-                    sueldo = sueldo + (0.14 * sueldo);
+                    incremento =  (0.14 * sueldo);
                 }
             } else {
                 if (n % 4 == 0) {
-                    sueldo = sueldo + (0.12 * sueldo);
+                    incremento =  (0.12 * sueldo);
                 } else {
-                    sueldo = sueldo + (0.8 * sueldo);
+                    incremento =  (0.8 * sueldo);
                 }
             }
+            sueldo = sueldo + incremento;
         }
         return sueldo;
     }
 
+    public static double porcentajeAumento(double sueldoInicial, double sueldoFinal){
+        return (sueldoInicial/sueldoFinal)*100;
+    }
 }
