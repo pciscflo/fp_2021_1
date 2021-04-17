@@ -3,7 +3,7 @@ package com.upc.fundamentos.arreglos;
 public class Ejercicio2 {
 
     public static void main(String[] args) {
-        int[] alumnos = {12,16,19,17,14,12};
+        int[] alumnos = {12,9,19,17,14,12};
         int s, maximo;
         double promedio;
         s = calcularSuma(alumnos);
@@ -11,12 +11,18 @@ public class Ejercicio2 {
         maximo = obtenerMayorNota(alumnos);
         System.out.println("Mayor nota:" + maximo);
         promedio = calcularPromedio(alumnos);
-        System.out.println("Promedio:"+ promedio);
+        System.out.printf("Promedio:%.2f\n", promedio);
+        System.out.println("Cantidad de Desaprobados:" + calcularCantidadDesaprobados(alumnos));
     }
-    //calcule la cantidad de desaprobados
+    //calcule la cantidad de alumnos desaprobados
     public static int calcularCantidadDesaprobados(int[] alumnos){
-        
-        return 0;
+        int contadorDesaprobados=0;
+        for (int i=0; i<alumnos.length;i++){
+            if(alumnos[i]<13){
+                contadorDesaprobados = contadorDesaprobados + 1;//contadorDesaprobados++;
+            }
+        }
+        return contadorDesaprobados;//2
     }
 
     public static int calcularSuma(int[] alumnos){
