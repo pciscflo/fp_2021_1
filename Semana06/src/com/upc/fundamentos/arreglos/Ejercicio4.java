@@ -7,7 +7,7 @@ public class Ejercicio4 {
     distintos indicadores, así como montos a pagar en comisión de ventas.
     Como ejemplo, tenemos los siguientes valores de prueba:
     Vendedores	Ventas
-    Hugo	      15
+    Hugo	      15--> i=0 ventas[i] -- vendedores[i]
     Mariana	      16
     Luis	       1
     Jennifer	   0 --> i = 3 -- ventas[i] ----vendedores[i]
@@ -30,14 +30,44 @@ d)	Si se sabe que por cada unidad vendida se tiene que pagar una comisión de ve
     public static void main(String[] args) {
         String[] vendedores = {"Hugo", "Mariana","Luis","Jennifer","Jorge", "Valeria", "Manuel"};
         int[] ventas = {15, 16, 1, 0, 4, 15, 13};
-        System.out.println("Unidades Vendidas Total:"+ obtenerTotalUnidadesVendidas(ventas));
+        String[]  vendedoresTop;
+        System.out.println("a)Unidades Vendidas Total:"+ obtenerTotalUnidadesVendidas(ventas));
+        System.out.println("b)Porcentaje Vendedores:" + obtenerPorcentajeVendedoresSuperaronCuota(ventas));
+        vendedoresTop = obtenerAgentesSuperanCuota(ventas,vendedores);
+        System.out.println("------ Vendedores Top ------");
+        for (int i=0; i<vendedoresTop.length;i++){
+            System.out.println(vendedoresTop[i]);
+        }
 
     }
+    public static String[] obtenerAgentesSuperanCuota(int[] ventas, String[] vendedores){
+        String[] temporal = new String[vendedores.length];
+        int j =-1;//cantidad de vendedores que cumplen la cuota
+        for(int i=0; i<ventas.length;i++){
+            if (ventas[i]>=5){ //si se supero la cuota
+                j++;//0,1
+               temporal[j] = vendedores[i];//temporal[0]="Hugo", temporal[1]="Mariana"...
+            }
+        }
+        return temporal;
+    }
+
     public static int obtenerTotalUnidadesVendidas(int[] ventas){
         int suma=0;
         for(int i=0 ; i<ventas.length; i++){
             suma+=ventas[i];
         }
         return suma;
+    }
+    public  static double obtenerPorcentajeVendedoresSuperaronCuota(int[] ventas){
+        int contadorCuotasPositivas=0;
+        double porcentaje;
+        for (int i=0; i< ventas.length; i++){
+            if(ventas[i]>=5){
+                contadorCuotasPositivas++;//contadorCuotasPositivas = contadorCuotasPositivas + 1
+            }
+        }
+        porcentaje = 100*contadorCuotasPositivas*1.0/ventas.length;
+        return porcentaje;
     }
 }
