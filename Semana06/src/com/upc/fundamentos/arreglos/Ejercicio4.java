@@ -42,11 +42,11 @@ d)	Si se sabe que por cada unidad vendida se tiene que pagar una comisión de ve
     }
     public static String[] obtenerAgentesSuperanCuota(int[] ventas, String[] vendedores){
         String[] temporal = new String[vendedores.length];
-        int j =-1;//cantidad de vendedores que cumplen la cuota
+        int j =0;//indice de vendedores que cumplen la cuota y va de 1 en 1
         for(int i=0; i<ventas.length;i++){
             if (ventas[i]>=5){ //si se supero la cuota
-                j++;//0,1
-               temporal[j] = vendedores[i];//temporal[0]="Hugo", temporal[1]="Mariana"...
+               temporal[j] = vendedores[i];//temporal[0]="Hugo", temporal[1]="Mariana"...j se incia en 0
+                j++;//1..
             }
         }
         return temporal;
