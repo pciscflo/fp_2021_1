@@ -58,7 +58,10 @@ d)	Si se sabe que por cada unidad vendida se tiene que pagar una comisión de ve
                 j++;//1..
             }
         }
-        return temporal;
+        //Para que solo devuelva un arreglo sin valores nulos, es opcional en los examenes
+       String [] arrF = new String[j];
+        System.arraycopy(temporal, 0, arrF, 0, arrF.length);
+        return arrF; //return temporal;
     }
 
     public static int obtenerTotalUnidadesVendidas(int[] ventas){
