@@ -38,7 +38,16 @@ d)	Si se sabe que por cada unidad vendida se tiene que pagar una comisión de ve
         for (int i=0; i<vendedoresTop.length;i++){
             System.out.println(vendedoresTop[i]);
         }
+        System.out.println("-----------------------------");
+        System.out.println("Total de Comisiones:" + calculatTotalComisiones(ventas));
 
+    }
+    public static double calculatTotalComisiones(int[] ventas){
+        int suma=0;
+        for(int i=0 ; i<ventas.length; i++){
+            suma+=ventas[i]*300;
+        }
+        return suma;
     }
     public static String[] obtenerAgentesSuperanCuota(int[] ventas, String[] vendedores){
         String[] temporal = new String[vendedores.length];
