@@ -1,16 +1,14 @@
 package com.upc.cadenas;
 
-import java.util.Scanner;
-
-public class Ejercicio3 {
+public class Ejercicio3a {
     static String[] codigos = {"AR000101", "PE125610", "CH452315","BR521317", "BR123620","PE752124",
-                               "AR124511", "PE262405", "PE563222", "BR452102", "AR455210"};
+            "AR124511", "PE262405", "PE563222", "BR452102", "AR455210"};
 
     public static int obtenerCantidadProductos(String nacionalidad){
         int contador = 0;
         for (int i=0; i< codigos.length;i++){
             if (codigos[i].substring(0,2).equals(nacionalidad)){
-               contador++;
+                contador++;
             }
         }
         return contador;
@@ -38,16 +36,8 @@ public class Ejercicio3 {
         return suma;
     }
     public static void main(String[] args) {
-        String nacionalidad;
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Ingrese nacionalidad:");
-        nacionalidad = sc.nextLine();
-        System.out.println(obtenerCantidadProductos(nacionalidad));
-        System.out.print("Ingrese nacionalidad:");
-        nacionalidad = sc.nextLine();
-        System.out.println(obtenerMaximoCorrelativo(nacionalidad));
-        System.out.print("Ingrese nacionalidad:");
-        nacionalidad = sc.nextLine();
-        System.out.println(calcularCostoAlmacenajeTotal(nacionalidad));
+        System.out.println(obtenerCantidadProductos("PE"));
+        System.out.println(obtenerMaximoCorrelativo("AR"));
+        System.out.println(calcularCostoAlmacenajeTotal("AR"));
     }
 }
