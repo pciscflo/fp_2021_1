@@ -25,9 +25,19 @@ public class Ejercicio3 {
         }
         return maximo;
     }
+    public static int calcularCostoAlmacenajeTotal(String nacionalidad){
+        int suma =0;
+        for(int i=0 ; i<codigos.length;i++){
+            if(codigos[i].substring(0,2).equals(nacionalidad)){
+                //sumar el costo de almacenar ese producto
+                suma+= Integer.parseInt(codigos[i].substring(6,8));
+            }
+        }
+        return suma;
+    }
     public static void main(String[] args) {
         System.out.println(obtenerCantidadProductos("PE"));
         System.out.println(obtenerMaximoCorrelativo("AR"));
-
+        System.out.println(calcularCostoAlmacenajeTotal("AR"));
     }
 }
