@@ -25,9 +25,18 @@ public class Ejercicio2 {
         return maximo;
     }
     public static String[] obtenerListaProveedoresJV(){
-        String [] temporal;
-
-        return null;
+        String [] temporal = new String[codigos.length-1];
+        int j=0;
+        for(int i=0; i<codigos.length;i++){
+            if(codigos[i].substring(8,9).equals("4") || codigos[i].substring(8,9).equals("5")){
+                temporal[j]=codigos[i];//se asigna el codigo que cumple la condicion
+                j++;
+            }
+        }
+        //Para que solo devuelva un arreglo sin valores nulos
+        String[] arrF = new String[j];
+        System.arraycopy(temporal, 0, arrF, 0, arrF.length);
+        return arrF;//o simplemente return temporal
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
