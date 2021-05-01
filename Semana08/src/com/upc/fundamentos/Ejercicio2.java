@@ -26,16 +26,18 @@ public class Ejercicio2 {
     }
     public static String[] obtenerListaProveedoresJV(){
         String [] temporal = new String[codigos.length-1];
+        //6 elementos {"3234MINV4", "1456MINV5", "8938INDP4", null,null, null}
         int j=0;
         for(int i=0; i<codigos.length;i++){
             if(codigos[i].substring(8,9).equals("4") || codigos[i].substring(8,9).equals("5")){
                 temporal[j]=codigos[i];//se asigna el codigo que cumple la condicion
-                j++;
+                j++;//tamaño del arreglo de los que cumplen la condicion
             }
         }
         //Para que solo devuelva un arreglo sin valores nulos
-        String[] arrF = new String[j];
+        String[] arrF = new String[j];//arreglo de 3 elementos
         System.arraycopy(temporal, 0, arrF, 0, arrF.length);
+        //{"3234MINV4", "1456MINV5", "8938INDP4"}
         return arrF;//o simplemente return temporal
     }
     public static void main(String[] args) {
@@ -45,6 +47,11 @@ public class Ejercicio2 {
         rubro = sc.nextLine();
         System.out.println("Cantidad de Proveedores:" + obtenerCantidadProveedores(rubro));
         System.out.println("El mayor ID es: " + obtenerMayorID(rubro));
-
+        System.out.println("----- Listado de JUE-VI -----");
+        String[] listado;
+        listado = obtenerListaProveedoresJV();
+        for (int i=0; i<listado.length;i++){
+            System.out.println(listado[i]);
+        }
     }
 }
