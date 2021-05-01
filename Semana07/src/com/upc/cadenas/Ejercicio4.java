@@ -2,7 +2,7 @@ package com.upc.cadenas;
 
 public class Ejercicio4 {
 
-
+//Ejemplo
     public static int calcularMontoPagar(String codigoPromocional, String tipoEntrada, String[] listaCodigos,
                                          int[] descuentos) {
         int precioEntrada=0, descuento=0;
