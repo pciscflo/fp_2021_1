@@ -16,7 +16,7 @@ public class Ejercicio5 {
         System.out.println("Suma de Cubos:" + sumarCubosMultiplosDe3(2));
         System.out.println("Suma de Cubos:" + sumarCubosMultiplosDe3Sol(2));
     }
-    public static int obtenerSumaDigitos(int numero){
+    private static int obtenerSumaDigitos(int numero){
         int digito, suma =0;
         while(numero>0){
             digito = numero % 10;

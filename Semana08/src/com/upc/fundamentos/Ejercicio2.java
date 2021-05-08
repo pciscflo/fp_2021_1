@@ -41,6 +41,7 @@ public class Ejercicio2 {
         return arrF;//o simplemente return temporal
     }
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         String rubro;
         System.out.print("Ingrese rubro:");

@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        Auto auto = new Auto();
+        System.out.println(auto.suma());
         Scanner sc = new Scanner(System.in);
         String tipoPerfilContratado;
         int cancionesTotalesIngles,cancionesTotalesEspaniol;
