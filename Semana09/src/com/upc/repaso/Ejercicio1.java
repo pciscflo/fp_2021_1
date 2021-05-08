@@ -23,6 +23,10 @@ public class Ejercicio1 {
         porcentajeAtenciones = 100*(contadorDistritos*1.0)/codigosDeAtencion.length;
         return porcentajeAtenciones;
     }
+    public static double obtenerMontoTotalxConsultas(String tipoConsulta){
+
+        return 0;
+    }
     public static void main(String[] args) {
         System.out.println(obtenerPorcentajeAtencionesRealizadas("LM"));
     }
